@@ -17,10 +17,13 @@ public class DemoApplication {
 	@Value("${NAME_DB}")
 	String name; // = dotenv.get("NAME_DB");
 
+
 	@RequestMapping("/")
 	String home() {
+		
+		String saludo = System.getenv().get("SALUDO");// by solapa Environment
 
-		return "Hello World!" + name;
+		return "Hello World!" + name + saludo;
 	}
 
 	public static void main(String[] args) {
